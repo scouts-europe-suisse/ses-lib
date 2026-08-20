@@ -1,0 +1,24 @@
+# Node
+node_modules/
+dist/
+build/
+coverage/
+*.log
+.DS_Store
+
+# Build & cache
+.vite/
+*.tsbuildinfo
+
+# Secrets — this repo never holds any. They are materialized by
+# dev-macro/_setup/setup-secrets.sh from dev-macro/_local/secrets.md,
+# which is the only place a credential is indexed.
+.env
+.env.local
+.env.*.local
+*.key
+*-credentials.json
+service-account*.json
+secrets/
+config/localConfig.yml
+localConfig.yml

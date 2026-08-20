@@ -1,0 +1,14 @@
+{
+  "name": "ses-lib",
+  "version": "0.0.0",
+  "description": "Shared building blocks for the Scouts Europe Suisse applications: auth client, design system, UI primitives, shared types.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scouts-europe-suisse/ses-lib.git"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}
