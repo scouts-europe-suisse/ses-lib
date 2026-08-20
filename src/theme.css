@@ -1,0 +1,52 @@
+/* Design tokens for the Scouts Europe Suisse applications.
+ *
+ * The source of truth for these values is dev-macro/_claude-memory/design.md.
+ * This file implements it; it does not redefine it. If a value here disagrees
+ * with that document, the document wins and this file is the bug.
+ *
+ * Tailwind v4 exposes every token below as a utility: bg-surface-1,
+ * text-ink-muted, border-branch-green, and so on.
+ *
+ * Consumers import it once, next to their own Tailwind import:
+ *   @import "tailwindcss";
+ *   @import "ses-lib/theme.css";
+ */
+
+@theme {
+  /* Brand — reserved for the logo lockup and rare key accents. Not for fills. */
+  --color-ses-red: #e2001a;
+  --color-ses-yellow: #ffed00;
+
+  /* Age branches. Tuned away from the brand red/yellow so they balance against
+   * each other and meet WCAG AA on white. Used for section chips and filters. */
+  --color-branch-yellow: #f5c518;
+  --color-branch-green: #2e7d32;
+  --color-branch-red: #c62828;
+
+  /* Neutrals, warm-leaning so the brand red and yellow do not clash. */
+  --color-surface-0: #ffffff;
+  --color-surface-1: #f8f7f4;
+  --color-surface-2: #edebe5;
+  --color-border: #d9d5cc;
+  --color-ink-strong: #1a1815;
+  --color-ink-body: #3d3a33;
+  --color-ink-muted: #6f6a5f;
+
+  /* System signals. Deliberately distinct from the brand reds and yellows, so
+   * the eye separates "this is the organisation" from "this is a status". */
+  --color-status-new: #1f8a4c;
+  --color-status-changed: #b47200;
+  --color-status-removed: #9f2d2d;
+  --color-status-info: #1f5dab;
+
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 0.5rem;
+}
+
+/* Tabular numerals are non-negotiable in money columns: without them, digits
+ * have different widths and figures stop lining up down a column. */
+.ses-numeric {
+  font-feature-settings: "cv11", "ss01", "tnum";
+  font-variant-numeric: tabular-nums;
+}

@@ -1,6 +1,6 @@
 {
   "name": "ses-lib",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Shared building blocks for the Scouts Europe Suisse applications: auth client, design system, UI primitives, shared types.",
   "type": "module",
   "license": "UNLICENSED",
@@ -10,5 +10,39 @@
   },
   "engines": {
     "node": ">=24"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./theme.css": "./src/theme.css"
+  },
+  "files": [
+    "dist",
+    "src/theme.css",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check:boundary": "./scripts/check-no-internal.sh"
+  },
+  "peerDependencies": {
+    "react": ">=19"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/react": "^19.2.18",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react": "^7.37.5",
+    "neostandard": "^0.13.0",
+    "react": "^19.2.8",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.67.0"
   }
 }
