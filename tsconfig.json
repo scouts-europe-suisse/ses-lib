@@ -8,7 +8,12 @@
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    // Node's types are needed by src/server.ts alone, which is a separate
+    // entry point (`ses-lib/server`) precisely so that node:crypto never lands
+    // in a browser bundle. Having the types available here does not put them
+    // there — the export map decides that.
+    "types": ["node"]
   },
   "include": ["src/**/*"]
 }
